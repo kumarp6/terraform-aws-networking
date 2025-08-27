@@ -1,13 +1,7 @@
-Thie module manages the creation of VPCs and Subnets, allowing for the creation of both private and public subnets.
-
-
-Example usage:
-
-```
 module "vpc" {
   source = "./modules/networking"
   vpc_config = {
-    name       = "your_vpc"
+    name       = "your_vpc_name"
     cidr_block = "10.0.0.0/16"
   }
   subnet_config = {
@@ -18,8 +12,8 @@ module "vpc" {
     subnet-2 = {
       cidr_block = "10.0.1.0/24"
       az         = "us-east-1b"
-      public     = true
+      # While creating subnet please make note of this.
+      public = true
     }
   }
 }
-```
